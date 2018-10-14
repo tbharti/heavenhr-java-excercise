@@ -1,0 +1,276 @@
+{
+	"info": {
+		"_postman_id": "af13876a-618f-4ab8-9080-724cfb4034e7",
+		"name": "Recruiting Process Postman Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Job Offer - Success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"jobTitle\" : \"Senior Java Developer\",\n\t\"startDate\" : \"2018-10-14\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job Offer - Success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"1"
+					]
+				},
+				"description": "Get Job Offer - Success"
+			},
+			"response": []
+		},
+		{
+			"name": "Create Job Offer - Bad Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"startDate\" : \"2018-10-14\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Job Offer - 404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"10"
+					]
+				},
+				"description": "Get Job Offer - Success"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Job Offers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apply to a job offer - Success",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"tarunbharti@hotmail.com\",\n\t\"resumeText\" : \"core java developer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/1/job-applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"1",
+						"job-applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST apply to Job Offer - Offer Not Found - Failure",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"tarunbharti@hotmail.com\",\n\t\"resumeText\" : \"core java developer\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/100/job-applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"100",
+						"job-applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Application Per Job Offer - Success",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/1/job-applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"1",
+						"job-applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Job Application For tracking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/api/job-applications",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-applications"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update job application status",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"status\" : \"INVITED\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/job-offers/1/job-applications/1/status",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"job-offers",
+						"1",
+						"job-applications",
+						"1",
+						"status"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
